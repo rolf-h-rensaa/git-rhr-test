@@ -1,3 +1,19 @@
+1. Create a global central css file for the UiT-theme.
+	- in <theme>/dist/uit-global.css
+	- arrange this file With the following cascading order:
+	  xxxx
+	  xxxx
+0b. Prevent caching of uit_global.css and the central tailwindcss distibution file:
+
+
+2. Create a library entry for the css file in 1.
+	- open <theme>/uit_theme.libraries.yml
+	- add the following:
+	  xxxx
+3. Activate the uit-global.css With a Library entry in the <theme>/uit_theme.info.yml file
+	libraries:
+  	- uit_theme/uit_global <xxxx>
+
 a) Satt opp regioner i Drupal
 b) Tweak på utgangspunkt: page.html.twig
 c) Skrevet pre-processor kode for å håndtere ulike templates
