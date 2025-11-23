@@ -1,0 +1,31 @@
+.fa-3xl {
+  font-size: 2.5em;
+  line-height: 0.0390625em;
+  /* Adjusted proportionally */
+  vertical-align: -0.234375em;
+  /* Adjusted proportionally */
+}
+
+.fa-4xl {
+  font-size: 3.5em;
+  line-height: 0.0546875em;
+  /* Adjusted proportionally */
+  vertical-align: -0.328125em;
+  /* Adjusted proportionally */
+}
+
+.fa-5xl {
+  font-size: 4.5em;
+  line-height: 0.0703125em;
+  /* Adjusted proportionally */
+  vertical-align: -0.421875em;
+  /* Adjusted proportionally */
+}
+
+.fa-6xl {
+  font-size: 5.5em;
+  line-height: 0.0859375em;
+  /* Adjusted proportionally */
+  vertical-align: -0.515625em;
+  /* Adjusted proportionally */
+}

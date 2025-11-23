@@ -1,0 +1,73 @@
+.icon {
+  flex-grow: 0;
+  /* Equivalent to grow-0 */
+  flex-shrink: 0;
+  /* Equivalent to shrink-0 */
+  display: inline-block;
+  /* Equivalent to inline-block */
+  background-repeat: no-repeat;
+  /* Equivalent to bg-no-repeat */
+  background-position: center;
+  /* Equivalent to bg-center */
+  background-size: contain;
+  /* Equivalent to bg-contain */
+  height: 20px;
+  margin-top: 3px;
+}
+
+
+
+.icon.dark {
+  filter: invert(1);
+  /* Equivalent to dark:invert-graphic */
+}
+
+.icon--inverted {
+  filter: invert(1);
+  /* Equivalent to invert-graphic */
+}
+
+.icon:where([data-theme="dark"], [data-theme="dark"] *),
+.icon--inverted {
+  filter: brightness(0)invert();
+}
+
+.icon--chevron-right {
+  background-image: url("../public/icons/chevron-right.svg");
+  /* Equivalent to bg-[url("../public/icons/chevron-right.svg")] */
+}
+
+.icon--facebook {
+  background-image: url("../public/icons/facebook.svg");
+  /* Equivalent to bg-[url("../public/icons/facebook.svg")] */
+}
+
+.icon--instagram {
+  background-image: url("../public/icons/instagram.svg");
+  /* Equivalent to bg-[url("../public/icons/instagram.svg")] */
+}
+
+.icon--tiktok {
+  background-image: url("../public/icons/tiktok.svg");
+  /* Equivalent to bg-[url("../public/icons/tiktok.svg")] */
+}
+
+.icon--youtube {
+  background-image: url("../public/icons/youtube.svg");
+  /* Equivalent to bg-[url("../public/icons/youtube.svg")] */
+}
+
+.icon--linkedin {
+  background-image: url("../public/icons/linkedin.svg");
+  /* Equivalent to bg-[url("../public/icons/linkedin.svg")] */
+}
+
+.icon--map-pin {
+  background-image: url("../public/icons/map-pin.svg");
+  /* Equivalent to bg-[url("../public/icons/map-pin.svg")] */
+}
+
+.icon--clock {
+  background-image: url("../public/icons/clock.svg");
+  /* Equivalent to bg-[url("../public/icons/clock.svg")] */
+}

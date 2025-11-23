@@ -1,0 +1,193 @@
+@import "tailwindcss";
+@config "../tailwind.config.mjs";
+
+
+@import "./typography.css";
+@import "./components.css" layer(components);
+@import "./layout.css";
+@import "./icons.css" layer(utilities);
+@import "./fontawsome.css" layer(utilities);
+
+
+
+@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@utility invert-graphic {
+  filter: brightness(0) invert(1);
+}
+
+/* NB! Sjekk at denne er lagt inn i body taggen i html.html.twig filen
+@layer base {
+  body {
+    @apply bg-bg text-fg transition-colors duration-300;
+  }
+}
+
+Sett inn som:
+{
+    % set body_classes=[ logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage': 'path-' ~ root_path|clean_class,
+      node_type ? 'page-node-type-' ~ node_type|clean_class,
+      db_offline ? 'db-offline',
+      'bg-bg',
+      'text-fg',
+      'transition-colors',
+      'duration-300'
+      ] %
+  }
+  */
+
+
+
+
+
+@theme {
+
+  --color-blue-600: #106E9E;
+  --color-blue-400: #26A7E8;
+  --color-blue-200: #7DD3FF;
+
+  --color-teal-900: #083349;
+  --color-teal-800: #0C4E70;
+  --color-teal-600: #007396;
+  --color-teal-300: #7ACBD4;
+  --color-teal-200: #ACDEE4;
+  --color-teal-100: #DEF2F4;
+
+  --color-yellow-900: #422E00;
+  --color-yellow-600: #976900;
+  --color-yellow-400: #BD8400;
+  --color-yellow-300: #F2A900;
+  --color-yellow-200: #F7CB66;
+  --color-yellow-100: #FADD99;
+  --color-yellow-50: #FCEECC;
+
+  --color-gray-1000: #121212;
+  --color-gray-950: #1B1B1B;
+  --color-gray-800: #4F4F4F;
+  --color-gray-700: #636363;
+  --color-gray-300: #B9B9B9;
+  --color-gray-100: #eeeeee;
+  --color-gray-50: #FDFDFD;
+
+  --color-black: var(--color-gray-1000);
+  --color-white: #ffffff;
+
+  /*  Theme colors  */
+
+  --color-bg: var(--color-white);
+  --color-fg: var(--color-black);
+
+  --color-muted: var(--color-gray-100);
+  --color-muted-fg: var(--color-gray-700);
+
+  --color-dark: var(--color-teal-900);
+  --color-on-dark: var(--color-white);
+
+  --color-inverted: var(--color-teal-900);
+  --color-on-inverted: var(--color-white);
+
+  --color-primary: var(--color-blue-600);
+  --color-primary-fg: var(--color-blue-600);
+  --color-on-primary: var(--color-white);
+  --color-primary-subtle: var(--color-teal-200);
+  --color-primary-muted: var(--color-teal-100);
+
+  --color-secondary: var(--color-yellow-300);
+  --color-secondary-fg: var(--color-black);
+  --color-on-secondary: var(--color-black);
+  --color-secondary-subtle: var(--color-yellow-200);
+  --color-secondary-muted: var(--color-yellow-100);
+
+
+
+}
+
+
+[data-theme="dark"] {
+  --color-yellow-400: #996B00;
+  --color-bg: var(--color-black);
+  --color-fg: var(--color-white);
+
+  --color-muted: var(--color-gray-800);
+  --color-muted-fg: var(--color-gray-300);
+
+  --color-inverted: var(--color-fg);
+  --color-on-inverted: var(--color-bg);
+
+  --color-primary: var(--color-blue-400);
+  --color-primary-fg: var(--color-blue-400);
+  --color-on-primary: var(--color-gray-950);
+  --color-primary-muted: var(--color-teal-900);
+  --color-primary-subtle: var(--color-blue-600);
+
+  --color-secondary: var(--color-yellow-400);
+  --color-secondary-fg: var(--color-white);
+  --color-on-secondary: var(--color-white);
+  --color-secondary-subtle: var(--color-yellow-600);
+  --color-secondary-muted: var(--color-yellow-900);
+}
+
+
+
+
+@theme inline {
+
+
+}
+
+
+@layer base {
+  :root {
+    /* Font families */
+    --font-sans: "Open Sans", sans-serif;
+    --font-serif: "Open Sans", sans-serif;
+    --font-mono: "Open Sans", sans-serif;
+
+    /* Tracking */
+    --tracking-wide: 0.02em;
+
+    /* Text sizes and line-heights */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-xs--line-height: 1.5;
+
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-sm--line-height: 1.5;
+
+    --text-base: 1rem;
+    /* 16px */
+    --text-base--line-height: 1.5;
+
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-lg--line-height: 1.5;
+
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-xl--line-height: 1.5;
+
+    --text-2xl: 1.375rem;
+    /* 22px */
+    --text-2xl--line-height: 1.36;
+
+    --text-3xl: 1.75rem;
+    /* 28px */
+    --text-3xl--line-height: 1.36;
+
+    --text-4xl: 2.25rem;
+    /* 36px */
+    --text-4xl--line-height: 1.36;
+
+    --text-5xl: 2.8125rem;
+    /* 45px */
+    --text-5xl--line-height: 1.2;
+
+    --text-6xl: 3.625rem;
+    /* 58px */
+    --text-6xl--line-height: 1.2;
+  }
+
+}

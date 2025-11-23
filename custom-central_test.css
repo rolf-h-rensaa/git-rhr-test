@@ -1,0 +1,259 @@
+/**
+ * @file
+ * Centralized custom styles - takes precedense over standard drupal css
+ */
+
+ /******************************/
+/* Global styles and variables */
+:root {
+  --first-color: rgb(240, 239, 180);
+  --second-color: #000000;
+  --clr-header: #5ba4cf;
+  --clr-header: #eeeeee30;
+  --clr-header-bottom: white;
+  --clr-sidebars: #BFB9B5;
+  --clr-footer: #094c72;
+  --gradient-start: var(--clr-header-bottom);
+  --gradient-end: var(--clr-header);
+
+--grid-columns:
+    [full-width-start] 1fr
+    [l1-start container-start sidebar-first-start] minmax(80px, 120px)
+    [l1-end l2-start] minmax(80px, 120px)
+    [l2-end l3-start] minmax(80px, 120px)
+    [l3-end sidebar-first-end content-start c1-start] minmax(80px, 120px)
+    [c1-end c2-start] minmax(80px, 120px)
+    [c2-end c3-start] minmax(80px, 120px)
+    [c3-end c4-start ] minmax(80px, 120px)
+    [c4-end c5-start ] minmax(80px, 120px)
+    [c5-end c6-start ] minmax(80px, 120px)
+    [r1-start c6-end content-end sidebar-second-start] minmax(80px, 120px)
+    [r1-end r2-start] minmax(80px, 120px)
+    [r2-end r3-start] minmax(80px, 120px)
+    [r3-end sidebar-second-end container-end] 1fr
+    [full-width-end]
+    ;
+  /* Hide the highlighted row */
+  --grid-rows-no-warning:
+    [container-row-start header-row-start] 100px
+    [header-row-end content-row-start ] 70vh
+    [content-row-end footer-row-start] 100px
+    [footer-row-end]
+    ;
+  --grid-rows:
+    [container-row-start header-row-start] 100px
+    [header-row-end highlighted-row-start] 50px
+    [highlighted-row-end content-row-start ] 1fr
+    [content-row-end footer-row-start] 100px
+    [footer-row-end];
+}
+
+/*******************************/
+/* Layout and Structure styles */
+/* Header region configuration */
+
+
+#xxxheader {
+  background-color: var(--first-color);
+  color: var(--second-color);
+}
+
+body {
+  margin: 0;
+  /* padding-top: 0 !important;
+  /* background: linear-gradient(135deg, #f6794D 0%, #40525C 100%);
+  /* min-block-size: 100svh;
+  /* background-image: url("https://images.unsplash.com/photo-1755918909925-f62b86d93c2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjA1NTk3OTF8&ixlib=rb-4.1.0&q=80&w=1200"); */
+  background-size: cover;
+  font: bold 16px system-ui, arial;
+}
+
+.layout-container {
+  top: 0px;
+  /* top: var(--drupal-displace-offset-top, 0px); */
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: var(--grid-columns);
+  grid-template-rows: var(--grid-rows);
+  /*grid-template-areas: var(--grid-layout-warning);*/
+  grid-gap: 0px;
+  position: relative;
+}
+
+.header-container {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.header-left-region {
+  /* background: var(--clr-header); */
+  background: linear-gradient(180deg, var(--gradient-start) 70%, var(--gradient-end) 100%);
+  grid-column: sidebar-first / c3-start;
+  z-index: 1;
+  align-content: center;
+  padding-left: 2em;
+}
+
+.header-center-region {
+  /* background: var(--clr-header); */
+  background: linear-gradient(180deg, var(--gradient-start) 70%, var(--gradient-end) 100%);
+  grid-column: c3-start/ content-end;
+  z-index: 1;
+  align-content: center;
+}
+
+.header-right-region {
+  background: var(--clr-header);
+  background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: linear-gradient(180deg, var(--gradient-start) 70%, var(--gradient-end) 100%);
+  /*grid-column: sidebar-second; */
+  /*grid-row: header-row-start / header-row-end;*/
+
+  /* grid-area: content-row-start/content-start/content-row-end/content-end;*/
+  /*grid-area: header-row-start/sidebar-second-start/header-row-end/content-end;*/
+  /*grid-area: content-row/content;*/
+  grid-area: header-row / sidebar-second;
+  z-index: 1;
+  align-content: center;
+}
+
+.highlighted-container {
+  background: mistyrose;
+  grid-area: highlighted-row / container;
+  /* display: none; */
+}
+
+.header-container::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(0deg, rgba(9, 76, 114, 0.3) 0%, rgba(91, 164, 207, 1) 100%);
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* grid-row: highlighted-row; */
+  grid-area: header-row / full-width;
+}
+
+.sidebar-first-container {
+  background: var(--clr-sidebars);
+  grid-column: sidebar-first;
+  grid-row: content-row;
+}
+
+.content-container {
+  background: white;
+  grid-column: content;
+  grid-row: content-row;
+}
+
+.sidebar-second-container {
+  background: var(--clr-sidebars);
+  grid-column: sidebar-second;
+  grid-row: content-row;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  color: white;
+}
+
+.footer-left-region {
+  background: var(--clr-footer);
+  grid-column: sidebar-first;
+  grid-row: footer-row;
+  z-index: 1;
+}
+
+.footer-center-region {
+  grid-column: content;
+  grid-row: footer-row;
+  background: var(--clr-footer);
+}
+
+.footer-right-region {
+  background: var(--clr-footer);
+  grid-column: sidebar-second;
+  grid-row: footer-row;
+  z-index: 1;
+}
+
+/* Show highlighted row */
+.show-highlighted {
+  grid-template-areas: var(--grid-layout);
+  grid-template-rows: var(--grid-rows-warning);
+  /* Remove the footer row */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* We dont't need Quick Edit buttons for specific blocks, in the header region  */
+#block-uit-rhr-mainnavigation button.trigger {
+  display: none;
+}
+
+
+/* Visual styling for the header menu */
+#header li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 5px 10px;
+
+}
+
+#header li>a {
+  color: var(--fg);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+#header li>a::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0;
+  top: 5px;
+  background: transparent;
+  transition: all 0.3s;
+}
+
+#header li>a:hover::after,
+#header li>a.active-nav::after {
+  width: 100%;
+  background: var(--blue-600);
+}
+
+#header ul li {
+  display: inline;
+  text-align: center;
+}
