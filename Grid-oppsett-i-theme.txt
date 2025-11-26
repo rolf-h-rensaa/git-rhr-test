@@ -1,0 +1,79 @@
+1. Create a global central css file for the UiT-theme.
+	- in <theme>/dist/uit-global.css
+	- arrange this file With the following cascading order:
+	  xxxx
+	  xxxx
+0b. Prevent caching of uit_global.css and the central tailwindcss distibution file:
+
+
+2. Create a library entry for the css file in 1.
+	- open <theme>/uit_theme.libraries.yml
+	- add the following:
+	  xxxx
+3. Activate the uit-global.css With a Library entry in the <theme>/uit_theme.info.yml file
+	libraries:
+  	- uit_theme/uit_global <xxxx>
+
+a) Satt opp regioner i Drupal
+b) Tweak på utgangspunkt: page.html.twig
+c) Skrevet pre-processor kode for å håndtere ulike templates
+d) 
+
+0. Konvensjon css: Bruker dash/ hyphens i alle id'er og klasser, ikke underscore
+0. Ikke BEM-metodikk: Jeg mener nye css mønster og komponentbasert design (atoms, molecules, organisms og komponents) gjør BEM i større grad overflødig og den krever for mye plass (lange klasse-navn).
+1. page.html.twig: "layout" gir ingen ekstra informasjon i standard twig fra Drupal > dårlig semantikk
+2. Semantikk: hva skal vi kalle regioner og forberede Block output med id'er og class'er
+3. Klasser som layout-container og header-container gir god semantikk
+4. Skal vi ha role="navigation" header right region?
+
+5. Se på gridline-names.
+6. Slå på grid names in inspector Tools
+7. 
+
+As the short-shorthand for:
+grid-row-start + grid-column-start + grid-row-end + grid-column-end:
+
+
+/* Ekstra */
+- repeat(4, min-content);
+
+- @media (min-Width: 680px) {
+  body {
+    display: grid;
+    grid-template-columns: var(--grid);
+  }}
+
+*/ Ekstra
+
+
+css:
+> HUSK "position: relative;" på parent element
+
+.highlighted::before {
+  content: '';
+  position: absolute;
+  background: lightgrey;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.highlighted::before {
+  content: "Note: ";
+  position: absolute;
+  background: lightgrey;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  grid-row: 2 / 3;
+}
