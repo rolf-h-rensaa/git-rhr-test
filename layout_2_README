@@ -1,0 +1,158 @@
+Konvensjon css: Bruker hyphens i alle id'er og klasser
+page.html.twig: "layout" gir ingen ekstra informasjon
+
+0. Prevent caching of uit_global.css and the central tailwindcss distibution file:
+    <link rel="stylesheet" media="all" href="/{{ base_path ~ directory }}/dist/main.css?v={{ random() }}">
+    <link rel="stylesheet" media="all" href="/{{ base_path ~ directory }}/dist/uit-global.css?v={{ random() }}">
+
+1. Create a global central css file for the UiT-theme.
+	- in <theme>/dist/uit-global.css
+	- arrange this file With the following cascading order:
+	  /* Global Styles */
+	  /* Layout/Structure */
+	  /* Components/Utilities */
+	- make a backup copy of the page.html.twig file (> page.html.twig.bak1)
+	- create/ populate the page.html.twig with new suggestion for layout and regions (example file page.html.twig)
+	- font-family: "Open Sans", sans-serif;
+	> git add themes/custom/uit_theme/dist/uit-global.css / git add -A
+2. Setup the new regions in uit_theme.info.yml (se example file)
+regions:
+  header_left: Header Left Region
+  header_center: Header Center Region
+  header_right: Header Right Region
+  highlighted: Highlighted Region
+  sidebar_first: Sidebar First Region
+  content: Content Region
+  sidebar_second: Sidebar Second Region
+  footer_left: Footer Left Region
+  footer_center: Footer Center Region
+  footer_right: Footer Right Region
+3. Make a backup of the region.html.twig > region.html.twig.bak1
+	In this file setup the correct class output for the region containers:
+	> region|clean_class ~ '-region' (NB. use example-file)
+4a Add some content - blocks to these regions/ header and footer regions
+	(- Primary tabs)
+	- Breadcrumbs
+	- Title
+	- Header menu
+	- Header Search/Hamburger
+4a Add the css header-menu styling to the uit-global.css under "Components/Utilities"
+4b Configure "Site branding block", upload logo svg file, turn off display of "Site name" and "Site slogan".
+4c Breadcrumbs: to make them work, we have to make a unique tracking order (ex /scisco/one_sci) in the "URL alias" per page
+
+5a Modify and update the src/main.css file with common color schema and setup from Los & Co
+5b npm run build
+5. Create a library entry for the css file in 1.
+	- open <theme>/uit_theme.libraries.yml
+	- add the following:
+	  xxxx
+6. Activate the uit-global.css With a Library entry in the <theme>/uit_theme.info.yml file
+	libraries:
+  	- uit_theme/uit_global <xxxx>
+
+
+
+http://localhost:8080/masquerade/unswitch
+http://localhost:8080/masquerade/unswitch
+
+<label class="hamburger-menu">
+	<input type="checkbox"/>
+</label>
+
+
+
+LAST NED BRANCH
+0. Structure | Block layout | "Remove all blocks unnecessary, add necessary"
+0a Site branding block | "Unmark: Display title, Site name and Site slogan"
+
+MENU HAMBURGER
+1. Structure | Block layout | Header Right Region > Place block | + Add content block | "Menu Hamburger"
+2 Fjern avmerking for "Display title"
+3. Set machine readable name = "uit_theme_menuhamburger"
+4. If doesn't exist (Create file from block.html.twig > block--uit-theme-menuhamburger.html.twig)
+5. Drush cr
+
+MENU HEADER CENTER
+uit_theme_mainnavigation
+Header Center Menu
+-> block_class module!
+-> block--system-menu-block.html.twig
+1. Structure | Block layout | Header Center Region > Place block | Main navigation > Place block
+2. Remove "Display title"
+3. Initial visibility level | 2
+4. Number of levels to display | 1
+5. Mark "Display empty block"
+6. Unmark "Make the initial visibility level follow the active menu item." > Children of active menu item
+
+
+
+
+
+1. \\wsl$ > home > "min bruker"
+1a. \\wsl¤\ubunto\home\rre017\Drupal kjører Truncate script derfra
+
+2. wsl plugin i VSC
+3. Enable Docker > Resources > WSL integration
+
+
+
+
+
+Ta vare på siste endringer, og last opp oppdatering til GitHub:
+* Be on same local branch
+* git add .
+* git commit -m "What I have done"
+* git push origin uit_theme_level2_1
+
+Gjøre en test (selv om at du står i en midlertidig branch), forkaste test og hoppe tilbake til utgangspunkt:
+*> git stash push -m "siste test"
+* "Gjør de nødvendige endringer og tester"
+* git stash drop (sletter endringer og går tilbake til scratch)
+* git stash save "beskrivelse av endring" (hvis du vil lagre endringen)
+	(git stash list)
+	(git stash apply <stash@{1}>   - to apply the most recent stash@{0} > git stach apply)
+* evt. git stash apply (hvis du vil implementere og ta vare på endringene)
+*> evt. git stash pop (hvis du vil implementere, og så droppe lagret stach
+
+
+> git stash push -m "Hva du har gjort - som skal lagres midlertidig, før hopp tilbake til der du startet"
+> git stash list (Se hva du har stashed away)
+> git stash apply stash@{n} (Bruk dette på nåværende grein, men ta vare på "stash")
+> git stash pop stash@{1} (Bruk stash og slett så lagret stash)
+
+>>> git log --graph --oneline --decorate --all
+
+Lage en ny lokal branch og kopiere branch fra GitHub til den nye lokale branchen:
+* git checkout -b uit_theme_level2_1 origin/uit_theme_level2_1
+* git pull origin uit_theme_level2_1
+
+Lage en ny lokal branch, med utgangspunkt i current branch, hoppe til denne branchen og laste den opp til GitHub:
+* git branch <nytt navn på branch>
+* git checkout <nytt navn på branch>
+(* evt. samlet, de to ovenstående: git checkout -b <nytt navn på branch>)
+* git push -u origin new-branch-name
+(The -u flag sets the upstream branch, so future git push commands will automatically push changes to this branch.)
+
+
+pwsh.exe -ExecutionPolicy Bypass .\Invoke-StartDrupalDev.ps1 -TruncateEnv
+
+1. wsl -u root (i egen terminal)
+2. cd \\wsl.localhost\Ubuntu
+
+docker exec -it drupal-dev-env-drupal-1 /bin/bash
+
+
+> ## Notes for windows users:
+1. \\wsl$
+2. > Ubuntu > home > rre017
+3. "Kopier denne pathen" (\\wsl.localhost\Ubuntu\home\rre017)
+4. Åpne ny PowerShell terminal
+5. I denne terminalen: cd <path>
+6. git clone https://github.com/UiT-ITA/DrupalDevEnvScripts.git (adresse hentes fra GitHub)
+7. cd .\DrupalDevEnvScripts\
+8. kopier over .env fil
+9. pwsh.exe -ExecutionPolicy Bypass .\Invoke-StartDrupalDev.ps1 -TruncateEnv
+
+
+run -it -p 7006:7007
+git remote -v
