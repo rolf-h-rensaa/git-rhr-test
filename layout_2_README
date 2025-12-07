@@ -123,8 +123,9 @@ Gjøre en test (selv om at du står i en midlertidig branch), forkaste test og h
 >>> git log --graph --oneline --decorate --all
 
 Lage en ny lokal branch og kopiere branch fra GitHub til den nye lokale branchen:
-* git checkout -b uit_theme_level2_1 origin/uit_theme_level2_1
-* git pull origin uit_theme_level2_1
+* git checkout -b <new-branch-name> origin/<remote-branch-name>
+//* git pull origin uit_theme_level2_1
+* git branch -vv
 
 Lage en ny lokal branch, med utgangspunkt i current branch, hoppe til denne branchen og laste den opp til GitHub:
 * git branch <nytt navn på branch>
