@@ -157,3 +157,15 @@ docker exec -it drupal-dev-env-drupal-1 /bin/bash
 
 run -it -p 7006:7007
 git remote -v
+
+
+SOME ALPINE CODE:
+<div x-data="{ count: 0 }">
+	<p>Her kommer en liten test, tellekant viser:
+		<span x-text="count"></span>
+	</p>
+	<button x-on:click="count++">Increase</button>
+</div>
+<div style="grid-column: sb1; display:grid;">
+	<p>Testing something</p>
+</div>
