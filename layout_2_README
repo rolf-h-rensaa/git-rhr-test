@@ -161,6 +161,7 @@ docker exec -it drupal-dev-env-drupal-1 /bin/bash
 run -it -p 7006:7007
 git remote -v
 
+*** drush config:set system.theme default olivero ***
 
 SOME ALPINE CODE:
 <div x-data="{ count: 0 }">
