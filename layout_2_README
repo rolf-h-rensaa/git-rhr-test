@@ -97,6 +97,9 @@ Header Center Menu
 
 
 
+Hente sist oppdatert branch fra GitHub (repository), laste det ned og merge det inn i lokal branch (to operasjoner i en):
+* git pull origin <branch-name>
+
 
 Ta vare på siste endringer, og last opp oppdatering til GitHub:
 * Be on same local branch
