@@ -87,6 +87,8 @@ Header Center Menu
 
 
 
+IF POSTCSS IS MISSING ON SERVER:
+npm install postcss postcss-cli
 
 1. \\wsl$ > home > "min bruker"
 1a. \\wsl¤\ubunto\home\rre017\Drupal kjører Truncate script derfra
