@@ -103,6 +103,10 @@ Hente sist oppdatert branch fra GitHub (repository), laste det ned og merge det 
 * git pull origin <branch-name>
 
 
+SETT OPP LOCAL BRANC MED SYNC TIL REMOTE BRANCH ON GITHUB:
+* git branch --set-upstream-to=origin/<local-branc-name>
+* For å sjekke korrekt upstream: git branch -vv
+
 Ta vare på siste endringer, og last opp oppdatering til GitHub:
 * Be on same local branch
 * git add .
