@@ -99,6 +99,13 @@ npm install postcss postcss-cli
 
 
 
+GIT KOMMANDOER OG PROSEDYRER:
+=============================
+* git log --graph --oneline --decorate --all (sjekk historikk)
+* git branch -vv (hvilken branch er jeg på lokalt og på github)
+* git branch --set-upstream-to=origin/uit_theme_level5_3 (sett upstream mot korrekt branch på Github)
+
+
 Hente sist oppdatert branch fra GitHub (repository), laste det ned og merge det inn i lokal branch (to operasjoner i en):
 * git pull origin <branch-name>
 
@@ -107,13 +114,13 @@ SETT OPP LOCAL BRANC MED SYNC TIL REMOTE BRANCH ON GITHUB:
 * git branch --set-upstream-to=origin/<local-branc-name>
 * For å sjekke korrekt upstream: git branch -vv
 
-Ta vare på siste endringer, og last opp oppdatering til GitHub:
+TA VARE PÅ SISTE ENDRINGER, OG LAST OPP OPPDATERING TIL GITHUB:
 * Be on same local branch
 * git add .
 * git commit -m "What I have done"
 * git push origin uit_theme_level2_1
 
-Gjøre en test (selv om at du står i en midlertidig branch), forkaste test og hoppe tilbake til utgangspunkt:
+GJØRE EN TEST (SELV OM AT DU STÅR I EN MIDLERTIDIG BRANCH), FORKASTE TEST OG HOPPE TILBAKE TIL UTGANGSPUNKT:
 *> git stash push -m "siste test"
 * "Gjør de nødvendige endringer og tester"
 * git stash drop (sletter endringer og går tilbake til scratch)
@@ -129,7 +136,7 @@ Gjøre en test (selv om at du står i en midlertidig branch), forkaste test og h
 > git stash apply stash@{n} (Bruk dette på nåværende grein, men ta vare på "stash")
 > git stash pop stash@{1} (Bruk stash og slett så lagret stash)
 
->>> git log --graph --oneline --decorate --all
+
 
 Lage en ny lokal branch og kopiere branch fra GitHub til den nye lokale branchen:
 * git checkout -b <new-branch-name> origin/<remote-branch-name>
