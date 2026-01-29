@@ -1,0 +1,44 @@
+Use the "align" variable to add the classes on the right:
+---------------------------------------------------------
+{% set align_class = {
+  'left':   'text-left',
+  'center': 'text-center',
+  'right':  'text-right',
+}[align] ?? 'text-left' %}
+
+<button {{ attributes.addClass(['my-button', 'button']) }}>
+  {{ text }}
+  {{ source(componentMetadata.path ~ '/img/' ~ iconType|default('power') ~ '.svg') }} // variablen iconType 
+</button>
+<pre>
+{{align_class}}
+</pre>
+
+
+Use the "is_feautured" variable to turn on/ off css styling of component:
+-------------------------------------------------------------------------
+<div{{ attributes.addClass(is_featured ? 'is-featured' : '') }}>
+ {{ content }}
+</div>
+.card.is-featured:hover {
+ background-color: #f5f5f5;
+}
+.card.is-featured::before {
+ content: "★";
+ color: gold;
+}
+
+
+Use .....
+---------------
+{% set arg1 = paragraph.field_arg1|column('target_id')|safe_join('+') %}
+{% set arg2 = paragraph.field_arg2|column('target_id')|safe_join(',') %}
+
+
+For å tildele en css klasse og sikre seg at man ikke får feilmelding hvis varabel er tom:
+-----------------------------------------------------------------------------------------
+<div{{ attributes.addClass(layout_classes|default([])) }}>
+
+
+
+
