@@ -1,3 +1,8 @@
+Nyttig lesing:
+* https://www.drupal.org/docs/develop/theming-drupal/twig-in-drupal/filters-modifying-variables-in-twig-templates
+* https://twig.symfony.com/doc/3.x/templates.html
+* https://twig.symfony.com/doc/3.x/coding_standards.html
+
 Use the "align" variable to add the classes on the right:
 ---------------------------------------------------------
 {% set align_class = {
