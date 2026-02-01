@@ -1,0 +1,176 @@
+Nyttig lesing:
+* https://www.drupal.org/docs/develop/theming-drupal/twig-in-drupal/filters-modifying-variables-in-twig-templates
+* https://twig.symfony.com/doc/3.x/templates.html
+* https://twig.symfony.com/doc/3.x/coding_standards.html
+
+{{ say something }}
+{% do something %}
+{# comment on something #}
+
+Use the "align" variable to add the classes on the right:
+---------------------------------------------------------
+{% set align_class = {
+  'left':   'text-left',
+  'center': 'text-center',
+  'right':  'text-right',
+}[align] ?? 'text-left' %}
+
+<button {{ attributes.addClass(['my-button', 'button']) }}>
+  {{ text }}
+  {{ source(componentMetadata.path ~ '/img/' ~ iconType|default('power') ~ '.svg') }} // variablen iconType 
+</button>
+<pre>
+{{align_class}}
+</pre>
+
+
+Use the "is_feautured" variable to turn on/ off css styling of component:
+-------------------------------------------------------------------------
+<div{{ attributes.addClass(is_featured ? 'is-featured' : '') }}>
+ {{ content }}
+</div>
+.card.is-featured:hover {
+ background-color: #f5f5f5;
+}
+.card.is-featured::before {
+ content: "★";
+ color: gold;
+}
+
+
+Use .....
+---------------
+{% set arg1 = paragraph.field_arg1|column('target_id')|safe_join('+') %}
+{% set arg2 = paragraph.field_arg2|column('target_id')|safe_join(',') %}
+
+
+For å tildele en css klasse og sikre seg at man ikke får feilmelding hvis varabel er tom:
+-----------------------------------------------------------------------------------------
+<div{{ attributes.addClass(layout_classes|default([])) }}>
+
+{{ content.field_subtitle|default('No subtitle available') }}
+
+
+String filters:
+--------------
+{{ title|lower }}
+{{ title|replace({'Drupal': 'Twig'}) }}
+
+// Date formatting
+{{ node.created.value|date("F j, Y") }}
+
+
+// Length checks
+{% if items|length > 3 %}
+  <p>There are many items.</p>
+{% endif %}
+
+
+path(): Generate internal links:
+--------------------------------
+<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+  {{ node.title.value }}
+</a>
+
+
+url(): Outputs full URLs:
+-------------------------
+{{ url('entity.node.canonical', {'node': node.id}) }}
+
+
+Conditionals:
+-------------
+<div class="alert {{ status == 'error' ? 'alert-danger' : 'alert-success' }}">
+  {{ message }}
+</div>
+
+
+Loops with logic:
+----------------
+{% for item in items %}
+  <li class="{{ loop.first ? 'first' : '' }} {{ loop.last ? 'last' : '' }}">
+    {{ item }}
+  </li>
+{% endfor %}
+
+
+Advanced attribute/css handling:
+--------------------------------
+<div{{ attributes.addClass('node', 'node--' ~ node.bundle) }}>
+  {{ content }}
+  // You could also merge attributes
+  {{ title_attributes.addClass('page-title') }}
+</div>
+
+
+Remove (and add) css classes:
+-----------------------------
+{%
+  set classes = [
+    'my-class',
+    'my-other-class',
+    'my-special-class',
+  ]
+%}
+<div{{ attributes.addClass(classes).removeClass('my-special-class') }}></div>
+
+
+Set any attribute:
+------------------
+attributes.setAttribute($attribute, $value)
+<div{{ attributes.setAttribute('id', 'myID') }}>
+
+
+Check for the existence of a specific class:
+--------------------------------------------
+{% if attribute.hasClass('myClass') %}
+  {# do stuff #}
+{% endif %}
+
+
+Chaining methods:
+-----------------
+<div{{ attributes.addClass('hello').removeClass('goodbye') }}>
+
+
+Using Twig's without filter:
+----------------------------
+When printing out individual attributes to customize them within a Twig template, you can use the without filter to prevent attributes that have already been printed from being printed again
+
+<div class="{{ attributes.class }} my-custom-class"{{ attributes|without('class') }}>
+
+
+URLs and route:
+---------------
+url($route_name, $parameters = array(), $options = array())
+path($route_name, $parameters = array(), $options = array())
+
+{%
+  set url_generic_example = url('route.name', {'paramKey': 'paramValue'}, {'optionKey': 'optionValue'})
+%}
+<a href="{{ url_generic_example }}">Link Text</a>
+
+<a href="{{ path('<front>') }}">
+  {{ 'Home'|t }}
+</a>
+
+<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+  {{ 'Read more'|t }}
+</a>
+
+Get the URI to a file
+Use file_url($uri)
+Accepts a URI to a file and creates a relative URL path to the file.
+Usage:
+
+{{ file_url(node.field_example_image.entity.uri.value) }}
+Example:
+
+{% set background_image = file_url(content.field_media_image[0]['#media'].field_media_image.entity.uri.value) %}
+
+
+
+* https://www.drupal.org/docs/develop/theming-drupal/twig-in-drupal
+* https://www.drupal.org/docs/contributed-modules/twig-tweak-2x/twig-tweak-and-views
+* https://www.drupalatyourfingertips.com/twig
+* https://internetdevels.com/blog/using-twig-in-drupal-8
