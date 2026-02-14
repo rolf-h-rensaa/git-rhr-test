@@ -3,6 +3,9 @@ Nyttig lesing:
 * https://twig.symfony.com/doc/3.x/templates.html
 * https://twig.symfony.com/doc/3.x/coding_standards.html
 
+* https://www.drupal.org/docs/develop/theming-drupal/twig-in-drupal/functions-in-twig-templates
+
+
 {{ say something }}
 {% do something %}
 {# comment on something #}
