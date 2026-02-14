@@ -1,0 +1,8 @@
+{# chown -R --reference=section_full_width section_wrapper_grid #}
+{# chmod -R --reference=section_full_width section_wrapper_grid #}
+
+<div {{ attributes }}>
+{% block content %}{{content}}{% endblock %}
+{{dump(_context)}}
+
+</div>

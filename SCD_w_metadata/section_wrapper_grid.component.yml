@@ -1,0 +1,66 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Section Wrapper With Grid
+status: stable
+props:
+  type: object
+  required:
+    - has_col_subgrid
+    - has_rows_subgrid
+  properties:
+    has_col_subgrid:
+      type: boolean
+      title: Has Columns Subgrid
+      description: Shall this container inherit the column grid from it&#039;s parent?
+      default: true
+      # @todo Add examples here.
+      examples: []
+    has_rows_subgrid:
+      type: boolean
+      title: Has Rows Subgrid
+      description: Shall this container inherit the rows grid from it&#039;s parent?
+      default: false
+      # @todo Add examples here.
+      examples: [true, false]
+    grid_templ_col:
+      type: string
+      title: Grid template columns
+      description: Add setup for grid template columns (grid-template-columns)
+      # @todo Add examples here.
+      examples: ['1fr 1fr','2fr 1fr']
+    grid_templ_rows:
+      type: string
+      title: Grid template rows
+      description: Add setup for grid template rows (grid-template-rows)
+      # @todo Add examples here.
+      examples: ['1fr 1fr','2fr 1fr']
+    content_position:
+      type: string
+      title: Content sections positioning
+      description: Configure where the content will be positioned
+      enum:
+        - content_center
+        - content_right
+        - content_left
+        - content_container
+        - content_full_width
+      meta:enum:
+        content_center: Center
+        content_right: Center&Right
+        content_left: Center&Left
+        content_container: Full Container
+        content_full_width: Full Width
+      x-translation-context: Content sections positioning
+      default: content_center
+      examples: ['content_right','content_center']
+    z_index:
+      type: integer
+      title: z-index
+      description: Configure the layer level for this wrapper container
+      enum: [-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+      # @todo Add examples here.
+      default: 0
+      examples: []
+slots:
+  content:
+    title: Content
+    description: Sections that will be wrapped with this component
