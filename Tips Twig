@@ -17,6 +17,7 @@ Use the "align" variable to add the classes on the right:
   'center': 'text-center',
   'right':  'text-right',
 }[align] ?? 'text-left' %}
+{# Twig’s null-coalescing operator ?? uses the left expression if align = null #}
 
 <button {{ attributes.addClass(['my-button', 'button']) }}>
   {{ text }}
