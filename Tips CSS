@@ -1,5 +1,4 @@
-T. Husk position relative på parent element når du bruker position: absolute;
-
+T. Husk position relative på parent element når du bruker position: absolute
 
 CSS fullwidth color bands:
 -------------------------
@@ -14,3 +13,68 @@ CSS fullwidth color bands:
   left: 0;
   grid-row: 2 / 3;
 }
+
+CSS Tips:
+---------
+* .child {
+    position: absolute;
+    inset: 100px 0 50px auto; /* Samme som top, right, bottom & left, auto = not declared */
+  }
+*  *{outline:3px dashed lime; }
+
+
+
+
+CSS Colors:
+-----------
+* var(--farge-variabel, var(--farge-fallback))
+
+
+CSS Text:
+--------
+* line-height: 1.1;
+* text-wrap: balance; (balansere tekst i overskrifter)
+* text-wrap: pretty (på større tekstavsnitt)
+
+CSS Selectors:
+--------------
+* .klasse1 > :nth-child(2) {}
+*  *+* { margin: 1em 0 0;} (Adjacent sibling selector/ søsken foran; gjør at space foran tilpasser seg størrelse)
+*  
+
+
+CSS Drop Shadows:
+-----------------
+* img {
+    filter: drop-shadow(0 0 1rem hsl(0 0% 0%)); }
+
+
+CSS Grid:
+---------
+* Ex: To align the whole grid to the top of the grid container: align-content: start;
+  .parent {
+    align-content/justify-content:start/end/center/stretch;
+  }
+* "Justere alle grid items":
+  .parent {
+    align-items/justify-items: start/end/center/stretch;
+  }
+* "Justere innhold i en enkelt grid celle"
+  .child {
+    align-self/justify-self: start/end/center/stretch;
+  }
+
+* grid-template-columns: repeat(auto-fit, minmax( min(100%, 300px), 1fr));
+* grid-row: span 4;
+
+
+Opplæring:
+----------
+* Emmet: h1+ 2*div
+* Inspector tools i Chrome/ FireFox
+* Grid:
+  - repeat()
+  - 1/-1
+  - use line names
+* CSS
+  - rgb( x x x / 0.e)
