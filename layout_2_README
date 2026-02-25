@@ -104,10 +104,15 @@ GIT KOMMANDOER OG PROSEDYRER:
 * git log --graph --oneline --decorate --all (sjekk historikk)
 * git branch -vv (hvilken branch er jeg på lokalt og på github)
 * git branch --set-upstream-to=origin/uit_theme_level5_3 (sett upstream mot korrekt branch på Github)
+* git pull origin <branch-name> (Hente siste oppdateringer fra branch i GitHub)
 
 
-Hente sist oppdatert branch fra GitHub (repository), laste det ned og merge det inn i lokal branch (to operasjoner i en):
-* git pull origin <branch-name>
+CREATE A NEW LOCAL BRANCH WITH THE CURRENT BRANCH AS A STARTING POINT, AND DOWNLOAD A CENTRAL BRANCH FROM GITHUB TO THIS BRANCH:
+* git checkout -b <new-branch-name> (lage ny branch, switch over til denne)
+* git fetch origin (hente siste oppdateringer fra remote repo)
+* git merge origin/<remote-branch-name> (merge the remote branch into your new branch)
+
+
 
 
 SETT OPP LOCAL BRANC MED SYNC TIL REMOTE BRANCH ON GITHUB:
@@ -138,12 +143,12 @@ GJØRE EN TEST (SELV OM AT DU STÅR I EN MIDLERTIDIG BRANCH), FORKASTE TEST OG H
 
 
 
-Lage en ny lokal branch og kopiere branch fra GitHub til den nye lokale branchen:
+LAGE EN NY LOKAL BRANCH OG KOPIERE BRANCH FRA GITHUB TIL DEN NYE LOKALE BRANCHEN:
 * git checkout -b <new-branch-name> origin/<remote-branch-name>
 //* git pull origin uit_theme_level2_1
 * git branch -vv
 
-Lage en ny lokal branch, med utgangspunkt i current branch, hoppe til denne branchen og laste den opp til GitHub:
+LAGE EN NY LOKAL BRANCH, MED UTGANGSPUNKT I CURRENT BRANCH, HOPPE TIL DENNE BRANCHEN OG LASTE DEN OPP TIL GITHUB:
 * git branch <nytt navn på branch>
 * git checkout <nytt navn på branch>
 (* evt. samlet, de to ovenstående: git checkout -b <nytt navn på branch>)
