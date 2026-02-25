@@ -111,7 +111,9 @@ CREATE A NEW LOCAL BRANCH WITH THE CURRENT BRANCH AS A STARTING POINT, AND DOWNL
 * git checkout -b <new-branch-name> (lage ny branch, switch over til denne)
 * git fetch origin (hente siste oppdateringer fra remote repo)
 * git merge origin/<remote-branch-name> (merge the remote branch into your new branch)
-
+PUSH THE NEW BRANCH TO GITHUB WITH A NEW NAME:
+* git push origin <local-branch-name>:<new-remote-branch-name>
+* git branch --set-upstream-to=origin/<new-remote-branch-name> (Set the New Branch to Track the Remote Branch)
 
 
 
