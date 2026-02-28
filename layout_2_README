@@ -101,7 +101,12 @@ Linux/Unix commands:
 ====================
 * docker exec -it drupal-dev-env-drupal-1 /bin/bash
 * docker exec -it -u www-data drupal-dev-env-drupal-1 /bin/bash
-* username / groupid 
+* username / groupid
+
+* chown -R 1000:1000 ./rhr_lb
+* 
+* chown :groupname /path/to/directory
+* chmod -R g+rw /path/to/directory
 1. chown -R username:groupname ./<dir> => chown -R 1000:1000 ./<dir>
 2. chmod -R u+w /home/user/tests
 3. chmod -R g=rw /home/user/tests (set write permissions for the group)
