@@ -97,6 +97,18 @@ npm install postcss postcss-cli
 3. Enable Docker > Resources > WSL integration
 
 
+Linux/Unix commands:
+====================
+* docker exec -it drupal-dev-env-drupal-1 /bin/bash
+* docker exec -it -u www-data drupal-dev-env-drupal-1 /bin/bash
+* username / groupid 
+1. chown -R username:groupname ./<dir> => chown -R 1000:1000 ./<dir>
+2. chmod -R u+w /home/user/tests
+3. chmod -R g=rw /home/user/tests (set write permissions for the group)
+4. setfacl -R -m u:username:rw /path/to/directory
+5. setfacl -R -m u:username:rw /path/to/directory
+6. setfacl -R -m g:groupname:rw /path/to/directory
+
 
 
 GIT KOMMANDOER OG PROSEDYRER:
