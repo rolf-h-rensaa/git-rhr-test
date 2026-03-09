@@ -101,6 +101,7 @@ Linux/Unix commands:
 ====================
 * docker exec -it drupal-dev-env-drupal-1 /bin/bash
 * docker exec -it -u www-data drupal-dev-env-drupal-1 /bin/bash
+* docker exec -it -u root nginx-rhr-drupal-1 /bin/bash
 * username / groupid
 
 * chown -R 1000:1000 ./rhr_lb
