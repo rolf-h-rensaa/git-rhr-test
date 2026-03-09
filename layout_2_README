@@ -163,9 +163,9 @@ GJØRE EN TEST (SELV OM AT DU STÅR I EN MIDLERTIDIG BRANCH), FORKASTE TEST OG H
 
 
 LAGE EN NY LOKAL BRANCH OG KOPIERE BRANCH FRA GITHUB TIL DEN NYE LOKALE BRANCHEN:
-* git checkout -b <new-branch-name> origin/<remote-branch-name>
-//* git pull origin uit_theme_level2_1
-* git branch -vv
+* git branch <new-branch-name>
+* git fetch origin <remote-branch-name>
+* git merge origin/<remote-branch-name>
 
 LAGE EN NY LOKAL BRANCH, MED UTGANGSPUNKT I CURRENT BRANCH, HOPPE TIL DENNE BRANCHEN OG LASTE DEN OPP TIL GITHUB:
 * git branch <nytt navn på branch>
