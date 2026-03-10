@@ -217,3 +217,33 @@ TEGN SOM KAN BRUKES:
 ↵ eller ¶
 
 
+
+
+Rebase master, oppdatering av branch
+====================================
+
+1. git checkout master
+2. git pull
+3. git checkout <min siste oppdaterte branch>
+4. git checkout -b <ny rebase branch> (Lag en ny gren og hopp inn i denne)
+5. git rebase master
+6. Hvis det er filer som er i ferd med å slettes, men som skal være med:
+6a. git restore themes/custom/uit_theme/dist/uit-global.css
+6b. git status
+6c. git rebase --continue
+Da er rebase ferdig
+
+Sette no status warings fra PhP:
+1. Koble opp terminal: docker exec -it drupal-dev-env-drupal-1 /bin/bash
+2. cd web/sites/default
+3. vi settings.php
+4. Naviger nederst i fila
+5. Input: $config['system.logging']['error_level'] = 'hide';
+6. Lagre
+7. cd /usr/local/etc/php/conf.d/
+8. vi docker-php-ext-error.ini
+9. Rediger denne fila og skriv inn: display_errors = off
+10. Lagre
+11. set-ExecutionPolicy Bypass -Scope Process
+12. .\Invoke-StartDrupalDev.ps1 -TruncateEnv (hvis du ikke har konfig i DB som du er redd for å miste)
+13. 
