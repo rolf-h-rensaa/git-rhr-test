@@ -123,6 +123,30 @@ GIT KOMMANDOER OG PROSEDYRER:
 * git branch -vv (hvilken branch er jeg på lokalt og på github)
 * git branch --set-upstream-to=origin/uit_theme_level5_3 (sett upstream mot korrekt branch på Github)
 * git pull origin <branch-name> (Hente siste oppdateringer fra branch i GitHub)
+*  git config --global --add safe.directory '%(prefix)///wsl.localhost/Ubuntu/home/rre017/drupal_test'
+* git clone  https://github.com/UiT-ITA/DrupalDevEnvScripts.git drupal_test
+* git diff themes/custom/uit_theme/dist/main.css
+* git fetch origin
+* Sjekk endringer:
+  git show
+  - git log
+  - git show <commit-hash>
+* git diff HEAD@{1} HEAD
+* Rettigheter
+ - Set-ExecutionPolicy Bypass -Scope Process
+ - .\Invoke-StartDrupalDev.ps1 -TruncateEnv
+ - .\bin\local-container.ps1
+ -Eller: pwsh.exe -ExecutionPolicy Bypass .\Invoke-StartDrupalDev.ps1
+ - Midlertidig tilgang:
+   > docker login uticontainerregistry.azurecr.io
+     username: drupal-developers-read
+     pw: sjekk
+   > Last ned: .\Invoke-StartDrupalDev.ps1 -TruncateEnv
+
+
+
+
+
 
 
 CREATE A NEW LOCAL BRANCH WITH THE CURRENT BRANCH AS A STARTING POINT, AND DOWNLOAD A CENTRAL BRANCH FROM GITHUB TO THIS BRANCH:
@@ -221,7 +245,9 @@ TEGN SOM KAN BRUKES:
 
 Rebase master, oppdatering av branch
 ====================================
-
+a. git remote -v
+b. (kopier adressen
+c. git branch -v
 1. git checkout master
 2. git pull
 3. git checkout <min siste oppdaterte branch>
