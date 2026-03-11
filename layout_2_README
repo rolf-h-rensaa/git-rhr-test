@@ -142,6 +142,7 @@ GIT KOMMANDOER OG PROSEDYRER:
      username: drupal-developers-read
      pw: sjekk
    > Last ned: .\Invoke-StartDrupalDev.ps1 -TruncateEnv
+- Sjekk: Get-ExecutionPolicy -List
 
 
 
