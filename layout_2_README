@@ -283,7 +283,13 @@ Sette no status warings fra PhP:
 
 NYINSTALLASJON AV DRUPAL:
 1. set-ExecutionPolicy Bypass -Scope Process
+2. git clone  https://github.com/UiT-ITA/DrupalDevEnvScripts.git <katalog for installasjon>
 2. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
 3. code "\\wsl.localhost\Ubuntu\home\rre017\drupal_nginx2"
 4. Sett inn korrekt URL for Postgres
 5. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
+
+
+KONFIGURERE NGINX:
+1. /etc/nginx/conf.d/default.conf (fra shell - docker exec -it -u root nginx2-nginx-1 /bin/sh)
+2. 
