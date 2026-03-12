@@ -1,3 +1,25 @@
+
+LINUX SHELL, DOCKER CONTAINER COMMANDS:
+=======================================
+* docker exec -it drupal-dev-env-drupal-1 /bin/bash
+* docker exec -it -u www-data drupal-dev-env-drupal-1 /bin/bash
+* docker exec -it -u root nginx-rhr-drupal-1 /bin/bash
+* docker exec -it -u root drupal-dev-env-nginx-1 /bin/sh (NGINX container)
+
+* username / groupid
+* chown -R 1000:1000 ./rhr_lb
+* 
+* chown :groupname /path/to/directory
+* chmod -R g+rw /path/to/directory
+1. chown -R username:groupname ./<dir> => chown -R 1000:1000 ./<dir>
+2. chmod -R u+w /home/user/tests
+3. chmod -R g=rw /home/user/tests (set write permissions for the group)
+4. setfacl -R -m u:username:rw /path/to/directory
+5. setfacl -R -m u:username:rw /path/to/directory
+6. setfacl -R -m g:groupname:rw /path/to/directory
+
+
+
 Konvensjon css: Bruker hyphens i alle id'er og klasser
 page.html.twig: "layout" gir ingen ekstra informasjon
 
@@ -97,24 +119,6 @@ npm install postcss postcss-cli
 3. Enable Docker > Resources > WSL integration
 
 
-LINUX SHELL, DOCKER CONTAINER COMMANDS:
-=======================================
-* docker exec -it drupal-dev-env-drupal-1 /bin/bash
-* docker exec -it -u www-data drupal-dev-env-drupal-1 /bin/bash
-* docker exec -it -u root nginx-rhr-drupal-1 /bin/bash
-* docker exec -it -u root drupal-dev-env-nginx-1 /bin/sh (NGINX container)
-
-* username / groupid
-* chown -R 1000:1000 ./rhr_lb
-* 
-* chown :groupname /path/to/directory
-* chmod -R g+rw /path/to/directory
-1. chown -R username:groupname ./<dir> => chown -R 1000:1000 ./<dir>
-2. chmod -R u+w /home/user/tests
-3. chmod -R g=rw /home/user/tests (set write permissions for the group)
-4. setfacl -R -m u:username:rw /path/to/directory
-5. setfacl -R -m u:username:rw /path/to/directory
-6. setfacl -R -m g:groupname:rw /path/to/directory
 
 
 
@@ -275,3 +279,11 @@ Sette no status warings fra PhP:
 11. set-ExecutionPolicy Bypass -Scope Process
 12. .\Invoke-StartDrupalDev.ps1 -TruncateEnv (hvis du ikke har konfig i DB som du er redd for å miste)
 13. 
+
+
+NYINSTALLASJON AV DRUPAL:
+1. set-ExecutionPolicy Bypass -Scope Process
+2. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
+3. code "\\wsl.localhost\Ubuntu\home\rre017\drupal_nginx2"
+4. Sett inn korrekt URL for Postgres
+5. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
