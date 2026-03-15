@@ -1,5 +1,16 @@
 T. Husk position relative på parent element når du bruker position: absolute
 
+Opplæring:
+----------
+* Emmet: h1+ 2*div
+* Inspector tools i Chrome/ FireFox
+* Grid:
+  - repeat()
+  - 1/-1
+  - use line names
+* CSS
+  - rgb( x x x / 0.e)
+
 CSS fullwidth color bands:
 -------------------------
 .highlighted::before {
@@ -68,13 +79,4 @@ CSS Grid:
 * grid-row: span 4;
 
 
-Opplæring:
-----------
-* Emmet: h1+ 2*div
-* Inspector tools i Chrome/ FireFox
-* Grid:
-  - repeat()
-  - 1/-1
-  - use line names
-* CSS
-  - rgb( x x x / 0.e)
+
