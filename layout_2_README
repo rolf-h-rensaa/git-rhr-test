@@ -288,7 +288,10 @@ NYINSTALLASJON AV DRUPAL:
 2. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
 3. code "\\wsl.localhost\Ubuntu\home\rre017\drupal_nginx2"
 4. Sett inn korrekt URL for Postgres
-5. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
+5. docker login uitcontainerregistry.azurecr.io
+     username: drupal-developers-read
+     pw: sjekk
+6. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
 
 
 KONFIGURERE NGINX:
