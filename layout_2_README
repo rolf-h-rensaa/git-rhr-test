@@ -143,7 +143,7 @@ GIT KOMMANDOER OG PROSEDYRER:
  - .\bin\local-container.ps1
  -Eller: pwsh.exe -ExecutionPolicy Bypass .\Invoke-StartDrupalDev.ps1
  - Midlertidig tilgang:
-   > docker login uticontainerregistry.azurecr.io
+   > docker login uitcontainerregistry.azurecr.io
      username: drupal-developers-read
      pw: sjekk
    > Last ned: .\Invoke-StartDrupalDev.ps1 -TruncateEnv
