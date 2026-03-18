@@ -204,7 +204,7 @@ LAGE EN NY LOKAL BRANCH, MED UTGANGSPUNKT I CURRENT BRANCH, HOPPE TIL DENNE BRAN
 * git branch <nytt navn på branch>
 * git checkout <nytt navn på branch>
 (* evt. samlet, de to ovenstående: git checkout -b <nytt navn på branch>)
-* git push -u origin new-branch-name
+* git push -u origin new-branch-name (sets the upstream branch)
 (The -u flag sets the upstream branch, so future git push commands will automatically push changes to this branch.)
 
 
