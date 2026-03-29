@@ -125,6 +125,7 @@ npm install postcss postcss-cli
 
 GIT KOMMANDOER OG PROSEDYRER:
 =============================
+* git status -sb (viser lokal- og sentral branch)
 * git log --graph --oneline --decorate --all (sjekk historikk)
 * git branch -vv (hvilken branch er jeg på lokalt og på github)
 * git branch --set-upstream-to=origin/uit_theme_level5_3 (sett upstream mot korrekt branch på Github)
