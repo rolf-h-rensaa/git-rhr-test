@@ -5,6 +5,7 @@ LINUX SHELL, DOCKER CONTAINER COMMANDS:
 * docker exec -it -u www-data drupal-dev-env-drupal-1 /bin/bash
 * docker exec -it -u root nginx-rhr-drupal-1 /bin/bash
 * docker exec -it -u root drupal-dev-env-nginx-1 /bin/sh (NGINX container)
+* Ved endringer i setup i docker-compose.yml: 1.  docker compose down (for å ta ned docker) 2. docker compose up -d (for å kjøre opp mijlet igjen med endringer)
 
 * username / groupid
 * chown -R 1000:1000 ./rhr_lb
