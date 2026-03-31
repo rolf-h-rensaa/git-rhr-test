@@ -28,6 +28,20 @@ Fra postgres container (.\bin\postgres-container.ps1):
 * psql -U drupaluser -d drupaldb
 * delete from flood;
 
+// For å fixe 404 error ved lasting av skjma (Ajax ++):
+Åpne fila: docker-compose.yml
+  nginx:
+    image: ${nginxImageName}:${nginxImageTag}
+    ports:
+      - ${nginxPort}:8080
+    volumes:
+      - drupal-data:/var/www/html/web/sites/default/files:ro
+      - drupal-data-web:/var/www/html/web:ro
+      - ./themes:/var/www/html/web/themes
+      - ./modules/custom:/var/www/html/web/modules/custom:ro
+    depends_on:
+      - drupal
+
 
 
 Konvensjon css: Bruker hyphens i alle id'er og klasser
