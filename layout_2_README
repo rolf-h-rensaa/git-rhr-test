@@ -269,6 +269,13 @@ c. git branch -v
 6b. git status
 6c. git rebase --continue
 Da er rebase ferdig
+----
+To force one choize when conflicts happens:
+* git checkout --ours .  (or ---theirs)
+* git add .
+* git rebase --continue
+----
+
 
 Sette no status warings fra PhP:
 1. Koble opp terminal: docker exec -it drupal-dev-env-drupal-1 /bin/bash
