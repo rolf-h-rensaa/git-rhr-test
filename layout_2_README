@@ -21,6 +21,13 @@ LINUX SHELL, DOCKER CONTAINER COMMANDS:
 7. find /path/to/search -type f -name "*.Zone.Identifier" -exec rm -f {} + (slette uønskede filer)
 8.  find ./path/to/search -name "*:Zone.Identifier" -type f -delete (slette uønskede filer)
 
+// Hvis pålogging går i stå:
+(drush php-eval "Drupal::flood()->clear('user.failed_login');")
+(drush php-eval 'db_query("DELETE FROM flood");')
+Fra postgres container (.\bin\postgres-container.ps1):
+* psql -U drupaluser -d drupaldb
+* delete from flood;
+
 
 
 Konvensjon css: Bruker hyphens i alle id'er og klasser
