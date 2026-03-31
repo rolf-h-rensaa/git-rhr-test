@@ -42,6 +42,11 @@ Fra postgres container (.\bin\postgres-container.ps1):
     depends_on:
       - drupal
 
+// FOR Å TILLATE Å INSTALLERE MODULER SOM KUN ER I ALFA RELEASE:
+1. Åpne composer.json i root-web katalog (var/www/html)
+2. Åpne fila i VI og finn entry: "minimum-stability": "stable",
+3. Bytt "stable" med "alpha"
+4. Lagre og lukk
 
 
 Konvensjon css: Bruker hyphens i alle id'er og klasser
