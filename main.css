@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin-ext');
+@import "tailwindcss";
+@config "../tailwind.config.mjs";
+
+@source inline("bg-red-500 hover:bg-red-500 text-4xl");
+
+/* Theme classes */
+@theme {
+  /* --color-*: initial; to override the entire color-namespace. Override by writing exactly color-class and define new color */
+  --blue-600: #106E9E;
+  --blue-400: #26A7E8;
+  --blue-200: #7DD3FF;
+
+  --teal-900: #083349;
+  --teal-800: #0C4E70;
+  --teal-600: #007396;
+  --teal-300: #7ACBD4;
+  --teal-200: #ACDEE4;
+  --teal-100: #DEF2F4;
+
+  --yellow-900: #422E00;
+  --yellow-600: #976900;
+  --yellow-400: #BD8400;
+  --yellow-300: #F2A900;
+  --yellow-200: #F7CB66;
+  --yellow-100: #FADD99;
+  --yellow-50: #FCEECC;
+
+  --gray-1000: #121212;
+  --gray-950: #1B1B1B;
+  --gray-800: #4F4F4F;
+  --gray-700: #636363;
+  --gray-300: #B9B9B9;
+  --gray-100: #EEEEEE;
+  --gray-50: #FDFDFD;
+
+  --black: var(--gray-1000);
+  --white: #FFF;
+
+  --color-bg: var(--white);
+  --color-fg: var(--black);
+  --color-muted: var(--color-gray-100);
+  --color-primary: var(--blue-600);
+  --color-primary-fg: var(--blue-600);
+  --color-primary-muted: var(--teal-100);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-on-primary: var(--white);
+  --color-secondary: var(--yellow-300);
+  --color-secondary-fg: var(--secondary-fg);
+  --color-secondary-muted: var(--secondary-muted);
+  --color-secondary-subtle: var(--yellow-200);
+  --color-on-secondary: var(--gray-1000);
+
+
+  --color-dark: var(--dark);
+  --color-on-dark: var(--on-dark);
+
+  --color-muted: var(--muted);
+  --color-muted-fg: var(--muted-fg);
+
+  --color-inverted: var(--teal-900);
+  --color-on-inverted: var(--white);
+
+
+  --font-sans: "Open Sans", sans-serif;
+  --font-serif: "Open Sans", sans-serif;
+  --font-mono: "Open Sans", sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.5;
+  --text-2xl: 1.375rem;
+  --text-2xl--line-height: 1.36;
+  --text-3xl: 1.75rem;
+  --text-3xl--line-height: 1.36;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 1.36;
+  --text-5xl: 2.8125rem;
+  --text-5xl--line-height: 1.2;
+  --text-6xl: 3.625rem;
+  --text-6xl--line-height: 1.2;
+}
+
+/* Base classes */
+@layer base {
+  body {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mt-[1em] mb-[0.5em];
+  }
+
+}
+
+/* Component classes */
+@layer components {
+  .card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: --spacing(6);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .btn--secondary--small {
+    @apply outline-[1.5px] outline-transparent inline-block px-3.5 py-2.5 cursor-pointer font-semibold tracking-wide leading-none text-sm bg-secondary text-on-secondary hover:bg-secondary-subtle hover:text-on-secondary active:outline-secondary-subtle;
+  }
+
+}
+
+/* Utility classes */
+@utility container {
+  @apply mx-auto !max-w-[1440px] w-full px-4 sm:px-6 md:px-11 lg:px-16 xl:px-20 bg-amber-600;
+}
+
+@utility horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+@utility vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@utility body-2 {
+  @apply text-xl text-pretty;
+}
+
+@utility body-5 {
+  @apply text-sm text-pretty;
+}
+
+@utility body-6 {
+  @apply text-xs text-pretty;
+}
+
+@utility heading-1 {
+  @apply text-6xl font-bold text-pretty;
+}
+
+@utility heading-2 {
+  @apply text-5xl font-bold text-pretty;
+}
+
+@utility heading-3 {
+  @apply text-4xl font-bold text-pretty;
+}
+
+@utility heading-4 {
+  @apply text-3xl font-bold text-pretty;
+}
+
+@utility heading-5 {
+  @apply text-2xl font-bold text-pretty;
+}
+
+@utility heading-6 {
+  @apply text-lg font-bold text-pretty;
+}
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility uit-test {
+  -webkit-transform: rotate(25deg);
+}
+
+@utility opacity-* {
+  opacity: --value([percentage]);
+  opacity: calc(--value(integer) * 1%);
+  opacity: --value(--opacity-*);
+}
+
+/* Usage: typography-2/red  or typography-3xl/secondary
+                        ↑ modifier */
+@utility typography-* {
+  font-size: --value(integer)rem;
+  font-size: --value(--text-*, [text]);
+  color: --modifier(--color-*);
+}
+/* @utility typography-* {
+  font-size: calc(--value(integer)/10)rem;
+  color: --modifier(--color-*);
+  /*                  ↑ Requires modifier to be a specified color */
+/* } */
+
+/* @layer utilities {
+  .heading-2 {
+    @apply text-4xl font-bold text-pretty;
+  }
+
+} */
+
+
+/* @layer components {
+  .btn {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: ButtonFace;
+  }
+}
+
+@utility btn {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: ButtonFace;
+} */
