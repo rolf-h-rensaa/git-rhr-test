@@ -48,6 +48,13 @@ Fra postgres container (.\bin\postgres-container.ps1):
 3. Bytt "stable" med "alpha"
 4. Lagre og lukk
 
+// FOR Å SLETTE FILER I WSL:
+1. 	Åpne PowerShell som admin
+2. wsl + ENTER
+3. cd /home/rre017
+4. sudo su
+5. rm -rf ./<dir som skal slettes>
+
 
 Konvensjon css: Bruker hyphens i alle id'er og klasser
 page.html.twig: "layout" gir ingen ekstra informasjon
@@ -283,7 +290,7 @@ TEGN SOM KAN BRUKES:
 Rebase master, oppdatering av branch
 ====================================
 a. git remote -v
-b. (kopier adressen
+b. (kopier adressen)
 c. git branch -v
 1. git checkout master
 2. git pull
