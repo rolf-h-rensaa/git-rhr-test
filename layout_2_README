@@ -25,8 +25,8 @@ LINUX SHELL, DOCKER CONTAINER COMMANDS:
 (drush php-eval "Drupal::flood()->clear('user.failed_login');")
 (drush php-eval 'db_query("DELETE FROM flood");')
 Fra postgres container (.\bin\postgres-container.ps1):
-* psql -U drupaluser -d drupaldb
-* delete from flood;
+1. psql -U drupaluser -d drupaldb
+2. delete from flood;
 
 // For å fixe 404 error ved lasting av skjma (Ajax ++):
 Åpne fila: docker-compose.yml
