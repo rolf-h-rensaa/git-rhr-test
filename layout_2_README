@@ -329,7 +329,7 @@ Evt. fra postgres container (.\bin\postgres-container.ps1):
 1. psql -U drupaluser -d drupaldb
 2. delete from flood;
 a. .\bin\local-container.ps1
-b. ---
+b. --- Legges til i enden av .env fila. NB! Restart Docker containers + drush cr ---
 # Flood control settings.Allow max 25 failed login attempts per user/per IP within 1 hour
 FLOOD_USER_LIMIT=25  # max attempts per user
 FLOOD_USER_WINDOW=3600 # time window (seconds)
