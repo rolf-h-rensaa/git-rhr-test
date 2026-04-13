@@ -21,12 +21,7 @@ LINUX SHELL, DOCKER CONTAINER COMMANDS:
 7. find /path/to/search -type f -name "*.Zone.Identifier" -exec rm -f {} + (slette uønskede filer)
 8.  find ./path/to/search -name "*:Zone.Identifier" -type f -delete (slette uønskede filer)
 
-// Hvis pålogging går i stå:
-(drush php-eval "Drupal::flood()->clear('user.failed_login');")
-(drush php-eval 'db_query("DELETE FROM flood");')
-Fra postgres container (.\bin\postgres-container.ps1):
-1. psql -U drupaluser -d drupaldb
-2. delete from flood;
+
 
 // For å fixe 404 error ved lasting av skjma (Ajax ++):
 Åpne fila: docker-compose.yml
@@ -325,6 +320,13 @@ Sette no status warings fra PhP:
 12. .\Invoke-StartDrupalDev.ps1 -TruncateEnv (hvis du ikke har konfig i DB som du er redd for å miste)
 13. 
 
+
+// Hvis pålogging går i stå:
+(drush php-eval "Drupal::flood()->clear('user.failed_login');")
+(drush php-eval 'db_query("DELETE FROM flood");')
+Fra postgres container (.\bin\postgres-container.ps1):
+1. psql -U drupaluser -d drupaldb
+2. delete from flood;
 
 NYINSTALLASJON AV DRUPAL:
 0. Ha klar oversikt over autentisering + start opp Docker
