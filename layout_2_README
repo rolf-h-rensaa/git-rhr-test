@@ -327,15 +327,16 @@ Sette no status warings fra PhP:
 
 
 NYINSTALLASJON AV DRUPAL:
+0. Ha klar oversikt over autentisering + start opp Docker
 1. set-ExecutionPolicy Bypass -Scope Process
-2. git clone  https://github.com/UiT-ITA/DrupalDevEnvScripts.git <katalog for installasjon>
-2. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
-3. code "\\wsl.localhost\Ubuntu\home\rre017\drupal_nginx2"
-4. Sett inn korrekt URL for Postgres
-5. docker login uitcontainerregistry.azurecr.io
+2. docker login uitcontainerregistry.azurecr.io
      username: drupal-developers-read
      pw: sjekk
-6. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
+3. git clone  https://github.com/UiT-ITA/DrupalDevEnvScripts.git <katalog for installasjon>
+4. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
+5. code "\\wsl.localhost\Ubuntu\home\rre017\drupal_nginx2"
+6. Sett inn korrekt URL for Postgres
+7. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
 
 
 KONFIGURERE NGINX:
