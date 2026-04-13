@@ -322,11 +322,21 @@ Sette no status warings fra PhP:
 
 
 // Hvis pålogging går i stå:
-(drush php-eval "Drupal::flood()->clear('user.failed_login');")
-(drush php-eval 'db_query("DELETE FROM flood");')
-Fra postgres container (.\bin\postgres-container.ps1):
+1. drush user:password admin fjoTAJtGObFfVzEAvdEx
+2. (drush php-eval "Drupal::flood()->clear('user.failed_login');")
+3. drush php:eval "\Drupal::database()->query('TRUNCATE flood');"
+Evt. fra postgres container (.\bin\postgres-container.ps1):
 1. psql -U drupaluser -d drupaldb
 2. delete from flood;
+a. .\bin\local-container.ps1
+b. ---
+# Flood control settings.Allow max 25 failed login attempts per user/per IP within 1 hour
+FLOOD_USER_LIMIT=25  # max attempts per user
+FLOOD_USER_WINDOW=3600 # time window (seconds)
+FLOOD_IP_LIMIT=25 # max attempts per IP
+FLOOD_IP_WINDOW=3600 # time window (seconds)
+---
+
 
 NYINSTALLASJON AV DRUPAL:
 0. Ha klar oversikt over autentisering + start opp Docker
