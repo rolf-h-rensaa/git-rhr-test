@@ -230,6 +230,10 @@ LAGE EN NY LOKAL BRANCH OG KOPIERE BRANCH FRA GITHUB TIL DEN NYE LOKALE BRANCHEN
 * git checkout <new-branch-name>
 * git fetch origin <remote-branch-name>
 * git pull origin <remote-branch-name>
+>Sette opp sync med github repository:
+* git branch --set-upstream-to=origin/<local-branc-name>
+* For å sjekke korrekt upstream: git branch -vv
+
 
 LAGE EN NY LOKAL BRANCH, MED UTGANGSPUNKT I CURRENT BRANCH, HOPPE TIL DENNE BRANCHEN OG LASTE DEN OPP TIL GITHUB:
 * git branch <nytt navn på branch>
