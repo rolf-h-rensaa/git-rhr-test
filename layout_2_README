@@ -233,6 +233,10 @@ LAGE EN NY LOKAL BRANCH OG KOPIERE BRANCH FRA GITHUB TIL DEN NYE LOKALE BRANCHEN
 >Sette opp sync med github repository:
 * git branch --set-upstream-to=origin/<local-branc-name>
 * For å sjekke korrekt upstream: git branch -vv
+> Ved merge conflicts og du vet din lokale branch skal ha prioritet for overskriving av alt:
+* git checkout --ours .
+* git add -A
+* git commit
 
 
 LAGE EN NY LOKAL BRANCH, MED UTGANGSPUNKT I CURRENT BRANCH, HOPPE TIL DENNE BRANCHEN OG LASTE DEN OPP TIL GITHUB:
