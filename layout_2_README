@@ -237,6 +237,7 @@ LAGE EN NY LOKAL BRANCH OG KOPIERE BRANCH FRA GITHUB TIL DEN NYE LOKALE BRANCHEN
 * git checkout --ours .   (Hvis andre siden gjelder: git checkout --theirs .)
 * git add -A
 * git commit
+* git pull
 
 
 LAGE EN NY LOKAL BRANCH, MED UTGANGSPUNKT I CURRENT BRANCH, HOPPE TIL DENNE BRANCHEN OG LASTE DEN OPP TIL GITHUB:
