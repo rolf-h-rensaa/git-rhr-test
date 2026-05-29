@@ -50,6 +50,10 @@ LINUX SHELL, DOCKER CONTAINER COMMANDS:
 4. sudo su
 5. rm -rf ./<dir som skal slettes>
 
+//FOR Å LASTE INN STUDIEPROGRAMMENE:
+/usr/local/etc/php/entrypoint.d# ./zz-98-add-studieprogram-tes
+t-data.sh
+
 
 Konvensjon css: Bruker hyphens i alle id'er og klasser
 page.html.twig: "layout" gir ingen ekstra informasjon
