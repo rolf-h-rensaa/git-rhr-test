@@ -367,6 +367,11 @@ KONFIGURERE NGINX:
 
 
 NYINSTALLASJON AV DRUPAL:
+Hvis du ikke har startet opp environment med DDEV ennå:
+a. wsl -d DDEV
+b. cd
+c. mkdir <wwwX.uit.no>
+
 1. Hopp inn wsl og lag ny mappe for repo: cd \\wsl.localhost\DDEV\home\rre017\<wwwX.uit.no>
 2. Hopp inn i nylaget katalog: cd <wwwX.uit.no>
 3. git clone https://github.com/UiT-ITA/www.uit.no.git
