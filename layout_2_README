@@ -351,7 +351,7 @@ FLOOD_IP_WINDOW=3600 # time window (seconds)
 ---
 
 
-NYINSTALLASJON AV DRUPAL:
+GAMMEL INSTALLASJON AV DRUPAL:
 0. Ha klar oversikt over autentisering + start opp Docker
 1. set-ExecutionPolicy Bypass -Scope Process
 2. docker login uitcontainerregistry.azurecr.io
@@ -362,8 +362,16 @@ NYINSTALLASJON AV DRUPAL:
 5. code "\\wsl.localhost\Ubuntu\home\rre017\drupal_nginx2"
 6. Sett inn korrekt URL for Postgres
 7. .\Invoke-StartDrupalDev.ps1 -TruncateEnv
-
-
 KONFIGURERE NGINX:
 1. /etc/nginx/conf.d/default.conf (fra shell - docker exec -it -u root nginx2-nginx-1 /bin/sh)
-2. 
+
+
+NYINSTALLASJON AV DRUPAL:
+1. Hopp inn wsl og lag ny mappe for repo: cd \\wsl.localhost\DDEV\home\rre017\<wwwX.uit.no>
+2. Hopp inn i nylaget katalog: cd <wwwX.uit.no>
+3. git clone https://github.com/UiT-ITA/www.uit.no.git
+   > brukernavn: rolf-h-rensaa
+   > pw: github_pat...
+4. Åpne fila: config.yaml og lagre nytt navn
+5. ddev install_from_template
+
