@@ -159,6 +159,7 @@ npm install postcss postcss-cli
 
 GIT KOMMANDOER OG PROSEDYRER:
 =============================
+* Git: Ctrl + r søker i historikken din og tar den siste
 * git status -sb (viser lokal- og sentral branch)
 * git log --graph --oneline --decorate --all (sjekk historikk)
 * git branch -vv (hvilken branch er jeg på lokalt og på github)
