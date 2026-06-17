@@ -385,3 +385,15 @@ c. mkdir <wwwX.uit.no>
 7. DDEV start
 8. DDEV drush uli
 
+DDEV START:
+* wsl -d ddev
+* cd ENTER (fra /mnt/c/WINDOWS/system32$)
+* cd f.eks. www.uit.no
+* ddev start
+* ddev drush uli
+
+
+
+
+
+
