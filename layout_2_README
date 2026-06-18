@@ -336,6 +336,7 @@ Sette no status warings fra PhP:
 
 
 // Hvis pålogging går i stå:
+0. ddev drush uli -> "Hopp inn på adresse, og endre passord der"
 1. drush user:password admin fjoTAJtGObFfVzEAvdEx
 2. (drush php-eval "Drupal::flood()->clear('user.failed_login');")
 3. drush php:eval "\Drupal::database()->query('TRUNCATE flood');"
