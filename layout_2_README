@@ -393,6 +393,26 @@ DDEV START:
 * ddev start
 * ddev drush uli
 
+FOR Å INSTALLERE NYE MODULER:
+* Hopp inn i gjeldende katalog for Drupal installasjon f.eks. www2.uit.no
+* DDEV composer require
+
+FOR Å KJØRE FLERE KOMMANDOER ETTER HVERANRDE:
+* DDEV SSH
+* (exit når ferdig)
+FOR Å SJEKKE HVILKE KOMMANDOER TILGJENGELIG I DDEV:
+* DDEV --help
+
+STOPPE EN INSTALLASJON AV DRUPAL OG STARTE EN ANNEN:
+* DDEV stop
+* Hopp inn i katalog for den andre installasjonen av Drupal
+* DDEV start
+
+TIPS - SJEKK UT KOMMANDOER:
+* DDEV snapshot (tar snapshot av database for du gjør store endringer, mulihet for å gå tilbake hvis ikke fornøyd)
+* snapshot restore for å komme tilbake (dumpfiler i ddev.snaphots)
+
+
 
 
 
