@@ -380,7 +380,7 @@ c. mkdir <wwwX.uit.no>
    > brukernavn: rolf-h-rensaa
    > pw: github_pat...
 (start VSC: code .)
-4. Åpne fila: config.yaml og lagre nytt navn
+4. Åpne fila: config.yaml og lagre nytt navn (samme som katalognavn)
 5. ddev install_from_template
 6. Når du kommer til: DB_EXPORT_BLOB_STORAGE_SECRET= -> legg inn secret
 7. DDEV start
