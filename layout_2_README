@@ -374,17 +374,28 @@ a. wsl -d DDEV
 b. cd + ENTER (hopper inn i /home/rre017)
 c. mkdir <wwwX.uit.no>
 
-1. Hopp inn wsl og lag ny mappe for repo: cd \\wsl.localhost\DDEV\home\rre017\<wwwX.uit.no>
+(1. Hopp inn wsl og lag ny mappe for repo: cd \\wsl.localhost\DDEV\home\rre017\<wwwX.uit.no> -> Nei)
 2. Hopp inn i nylaget katalog: cd <wwwX.uit.no>
 3. git clone https://github.com/UiT-ITA/www.uit.no.git
    > brukernavn: rolf-h-rensaa
-   > pw: github_pat...
+   > pw: github_pat...se kryptert fil
 (start VSC: code .)
 4. Åpne fila: config.yaml og lagre nytt navn (samme som katalognavn)
 5. ddev install_from_template
 6. Når du kommer til: DB_EXPORT_BLOB_STORAGE_SECRET= -> legg inn secret
 7. DDEV start
 8. DDEV drush uli
+
+HVIS DU FÅR PROBLEMER MED AUTENTISERING I PUNKT 3. OVENFOR:
+* Gå inn på repositoryet i Github
+* Klikk på ditt profil-icon
+* Velg "Settings"
+* Gå helt nederst i meny-valgene og velg: "Developer settings"
+* Velg "Personal access tokens"
+* Velg så "Fine grained tokens"
+* Klikk på "ddev-drupal" (eller det navnet du har gitt til tokenet
+* Klikk på "regenerate token" og sett en god expirisy dato
+* Ta vare på token - brukes som passord i punktet 3. ovenfor
 
 DDEV START:
 * wsl -d ddev
