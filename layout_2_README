@@ -20,6 +20,7 @@ LINUX SHELL, DOCKER CONTAINER COMMANDS:
 6. setfacl -R -m g:groupname:rw /path/to/directory
 7. find /path/to/search -type f -name "*.Zone.Identifier" -exec rm -f {} + (slette uønskede filer)
 8.  find ./path/to/search -name "*:Zone.Identifier" -type f -delete (slette uønskede filer)
+9. find . -name "filename.txt"
 
 
 
