@@ -1,0 +1,46 @@
+name: uit_rhr
+type: theme
+'base theme': stable9
+version: 1.0.0
+libraries:
+#  - uit_rhr/global-styling
+  - uit_rhr/base
+  - uit_rhr/messages
+#  - core/normalize
+#  - uit_rhr/main
+#  - uit_rhr/central
+  - uit_rhr/alpine
+libraries-extend:
+  user/drupal.user:
+    - uit_rhr/user
+  core/drupal.dropbutton:
+    - uit_rhr/dropbutton
+  core/drupal.dialog:
+    - uit_rhr/dialog
+  file/drupal.file:
+    - uit_rhr/file
+  core/drupal.progress:
+    - uit_rhr/progress
+  core/drupal.tablesort:
+    - uit_rhr/drupal.tablesort
+description: ''
+core_version_requirement: ^11
+generator: 'starterkit_theme:11.2.2'
+# regions:
+#   header: Header
+#   highlighted: Highlighted
+#   sidebar_first: Left sidebar
+#   content: Content
+#   sidebar_second: Right sidebar
+#   footer: Footer
+regions:
+  header_left: Header Left Region
+  header_center: Header Center Region
+  header_right: Header Right Region
+  highlighted: Highlighted Region
+  sidebar_first: Sidebar First Region
+  content: Content Region
+  sidebar_second: Sidebar Second Region
+  footer_left: Footer Left Region
+  footer_center: Footer Center Region
+  footer_right: Footer Right Region
