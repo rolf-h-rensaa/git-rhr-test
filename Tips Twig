@@ -10,6 +10,10 @@ Nyttig lesing:
 {% do something %}
 {# comment on something #}
 
+DUMP output from variables/arrays/objects:
+* {# dump(_context|keys) #}
+* {#dump(node.title.value)#}
+* 
 Use the "align" variable to add the classes on the right:
 ---------------------------------------------------------
 {% set align_class = {
