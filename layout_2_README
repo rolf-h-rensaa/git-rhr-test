@@ -371,6 +371,7 @@ KONFIGURERE NGINX:
 
 
 NYINSTALLASJON AV DRUPAL:
+*  wsl -d ddev -u root (hvis du vil være root)
 Hvis du ikke har startet opp environment med DDEV ennå:
 a. wsl -d DDEV
 b. cd + ENTER (hopper inn i /home/rre017)
