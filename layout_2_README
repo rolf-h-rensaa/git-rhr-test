@@ -428,9 +428,17 @@ TIPS - SJEKK UT KOMMANDOER:
 * DDEV snapshot (tar snapshot av database for du gjør store endringer, mulihet for å gå tilbake hvis ikke fornøyd)
 * snapshot restore for å komme tilbake (dumpfiler i ddev.snaphots)
 
-
-
-
+Tailwind må håndteres internt i wsl (må kjøres i docker container):
+-------------------------------------------------------------------
+1. ddev ssh 
+2. cd web/themes/custom/uit_theme 
+3. npm install 
+4. npm run build
+* Sjekk om postcss er eksekverbar: ls -l node_modules/.bin/postcss, hvis ikke:
+  > chmod +x node_modules/.bin/postcss
+* Hvis postcss mangler; npm install postcss postcss-cli
+Test server: https://uit-web-test-ddev.bgo1.test.rail.uib.no/
+---
 
 
 
