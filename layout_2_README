@@ -441,4 +441,6 @@ Test server: https://uit-web-test-ddev.bgo1.test.rail.uib.no/
 ---
 
 
+MAC (når du sletter et local repository):
+ddev stop --unlist www.uit.no
 
