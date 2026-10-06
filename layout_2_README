@@ -22,6 +22,8 @@ LINUX SHELL, DOCKER CONTAINER COMMANDS:
 8.  find ./path/to/search -name "*:Zone.Identifier" -type f -delete (slette uønskede filer)
 9. find . -name "filename.txt"
 10. grep -ri "layout builder" . (finner "layout builder" i mange kataloger og underkataloger , ignore case...)
+* cp -r /path/to/source/directory /path/to/destination/new-name
+
 
 
 
