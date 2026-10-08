@@ -321,6 +321,33 @@ To force one choize when conflicts happens:
 * git add .
 * git rebase --continue
 ----
+New rebase:
+# See where the remote repository points
+git remote -v
+
+# Copy the repository URL if needed
+
+# See your local branches
+git branch -v
+
+# Switch to master
+git checkout master
+
+# Get the latest master
+git pull
+
+# Switch to your latest working branch
+git checkout <my-latest-branch>
+
+# Create a safety branch for the rebase
+git checkout -b <new-rebase-branch>
+
+# Replay your work on top of the latest master
+git rebase master
+---
+
+
+
 
 
 Sette no status warings fra PhP:
