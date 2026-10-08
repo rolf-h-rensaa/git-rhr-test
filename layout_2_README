@@ -344,10 +344,13 @@ git checkout -b <new-rebase-branch>
 
 # Replay your work on top of the latest master
 git rebase master
+
+# Ctrl + X 
+
+nano .git/COMMIT_EDITMSG
+git log -1 --oneline
+
 ---
-
-
-
 
 
 Sette no status warings fra PhP:
