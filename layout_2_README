@@ -302,6 +302,10 @@ TEGN SOM KAN BRUKES:
 
 Rebase master, oppdatering av branch
 ====================================
+> Sjekk hvor langt etter jeg ligger på master branch:
+- git fetch origin
+- git status
+---
 a. git remote -v
 b. (kopier adressen)
 c. git branch -v
