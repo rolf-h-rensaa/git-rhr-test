@@ -302,10 +302,6 @@ TEGN SOM KAN BRUKES:
 
 Rebase master, oppdatering av branch
 ====================================
-> Sjekk hvor langt etter jeg ligger på master branch:
-- git fetch origin
-- git status
----
 a. git remote -v
 b. (kopier adressen)
 c. git branch -v
@@ -324,8 +320,24 @@ To force one choize when conflicts happens:
 * git checkout --ours .  (or ---theirs)
 * git add .
 * git rebase --continue
+
 ----
 New rebase:
+> Sjekk hvor langt etter jeg ligger på master branch:
+- git fetch origin
+- git status
+---
+> Hvis det er gjort en del endringer på lokalt setup uten å lage en ny branch, og jeg ennå ikke har kjørt noen git commits, så kan jeg ta vare på disse endringene i egen branch:
+-> Jeg står på lokal master branch, har gjort noen endringe, skal så ta vare på disse endringene i egen branc:
+  - git checkout -b min-nye-endringsbranch (oppretter ny branch for committen jeg står på nå, bytter til den nye branchen)
+  - git status
+  - git add .
+  - git commit -m "Mine endringer"
+---
+Rebase av min lokale master branch:
+git status
+git branch
+
 # See where the remote repository points
 git remote -v
 
@@ -337,17 +349,40 @@ git branch -v
 # Switch to master
 git checkout master
 
-# Get the latest master
-git pull
+# Hent siste data fra GitHub
+git fetch origin
 
-# Switch to your latest working branch
-git checkout <my-latest-branch>
+# Rebase lokal master branch mot sentral master (ikke rebase av sentral master altså :-))
+git rebase origin/master
 
-# Create a safety branch for the rebase
-git checkout -b <new-rebase-branch>
+# Kontroller resultatet
+git status
+git log --oneline --graph --decorate -10
+---
+---
+Rebase av min lokale-endringer-branch
+# Bytt til min branch
+git switch endringer-color-and-cascading
+git status
 
-# Replay your work on top of the latest master
+# Kjør rebase mo lokal master
 git rebase master
+---
+Merge endringer i lokal branch inn i Github master branch:
+#Stå på riktig branch
+git switch endringer-color-and-cascading
+git status
+
+# Commit eventuelle endringer som ikke er committet
+git add .
+git commit -m "Oppdatering av ..."
+
+#Last opp branchen til GitHub
+git push -u origin endringer-color-and-cascading
+
+
+
+
 
 # Ctrl + X 
 
